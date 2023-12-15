@@ -170,7 +170,7 @@ void poa_bsf(del_g *dell)
 		{
 			dell->status = WEXITSTATUS(dell->status);
 			if (dell->status == 126)
-				_prt_msg(dell, "sorry yu cannot do this\n");
+				_prt_msg(dell, "sorry u cannot do this\n");
 		}
 	}
 }
