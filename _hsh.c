@@ -145,6 +145,17 @@ void poa_bsf(del_g *dell)
 {
 	pid_t child_pid;
 
+    printf("Command path: %s\n", dell->path);
+
+    if (access(dell->path, F_OK) == -1) {
+
+        printf("Command doesn't exist\n");
+
+        dell->status = 127;
+        _prt_msg(dell, "Command not found\n");
+        return;
+    }
+
 	child_pid = fork();
 	if (child_pid == -1)
 	{
